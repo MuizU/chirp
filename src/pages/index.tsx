@@ -6,7 +6,7 @@ import {SignIn, SignOutButton, useUser} from "@clerk/nextjs";
 
 const Home: NextPage = () => {
     const user = useUser();
-    const { data } = api.posts.getAll.useQuery();
+    const {data} = api.posts.getAll.useQuery();
     return <>
         <Head>
             <title>Create T3 App</title>
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
             </div>
 
             <div>
-                {data?.map((post) => <div key={post.id}>{post.content}</div>)}
+                {data?.map((post) => (<div key={post.id}>{post.content}</div>))}
             </div>
         </main>
     </>;
